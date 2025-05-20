@@ -1,7 +1,7 @@
 {
   "name": "ghost-amt",
   "version": "1.0.0",
-  "description": "Find and clean up unused npm dependencies in your project",
+  "description": "👻 ghost-amt is a powerful and interactive CLI tool to detect and remove unused, bloated, or duplicate npm dependencies in your Node.js projects.",
   "main": "src/index.js",
   "bin": {
     "ghost-amt": "./bin/ghost-amt.js"
@@ -11,13 +11,26 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
+    "ghost-amt",
     "npm",
+    "cli",
     "dependencies",
-    "cleanup",
     "unused",
-    "packages",
-    "ghost",
-    "dependencies"
+    "cleanup",
+    "depcheck",
+    "dependency-cleaner",
+    "npm-cleanup",
+    "npm-audit",
+    "npm-remover",
+    "npm-uninstall",
+    "nodejs",
+    "nodejs-cli",
+    "developer-tool",
+    "code-cleaner",
+    "project-cleaner",
+    "node-package-cleaner",
+    "npm-dependency-checker",
+    "remove-unused-packages"
   ],
   "author": "Abdullah Al Mubin",
   "license": "MIT",
