@@ -1,45 +1,51 @@
 # 👻 ghost-amt
 
-> Find and clean up unused npm dependencies in your project
+> Find and clean up unused npm dependencies in your Node.js projects — quickly and safely.
 
 [![npm version](https://img.shields.io/npm/v/ghost-amt.svg)](https://www.npmjs.com/package/ghost-amt)
 [![Downloads](https://img.shields.io/npm/dm/ghost-amt.svg)](https://www.npmjs.com/package/ghost-amt)
 [![License](https://img.shields.io/npm/l/ghost-amt.svg)](https://github.com/your-username/ghost-amt/blob/main/LICENSE)
 
-<p align="center">
-  <img src="https://i.imgur.com/XYZ123.png" alt="ghost-amt logo" width="300">
-</p>
+---
 
 ## 🚀 Features
 
-- **Finds unused dependencies** in your Node.js projects
-- **Detects large packages** (>1MB) that might be bloating your project
-- **Interactive CLI** with colorful, emoji-rich feedback
-- **Zero configuration** required to get started
-- **Auto-removal** of unused packages with confirmation
-- **Fast scanning** powered by depcheck
+- 🔎 Detects **unused dependencies** and devDependencies in your project  
+- ⚠️ Warns about **large packages** (>1MB) that might bloat your app  
+- 🤖 Interactive CLI with colorful output and emojis  
+- 🧹 Prompt to **uninstall unused packages** with confirmation  
+- 🕒 Fast, zero-config scanning powered by [`depcheck`](https://github.com/depcheck/depcheck)  
+- 💻 Works with JavaScript and TypeScript projects  
+
+---
 
 ## 📦 Installation
 
-\`\`\`bash
-# Install globally
-npm install -g ghost-amt
+Install globally to use anywhere:
 
-# Or use without installing
+```bash
+npm install -g ghost-amt
+````
+
+Or run without installing:
+
+```bash
 npx ghost-amt
-\`\`\`
+```
+
+---
 
 ## 🧙‍♂️ Usage
 
-Simply run in your project root:
+Run `ghost-amt` inside your project root folder:
 
-\`\`\`bash
+```bash
 ghost-amt
-\`\`\`
+```
 
-### Example Output
+You’ll see an output like this:
 
-\`\`\`
+```
 👻 Welcome to ghost-amt - Find and clean up unused npm dependencies
 
 🔍 Scanning project for unused dependencies...
@@ -47,69 +53,74 @@ ghost-amt
 
 📊 Scan Results Summary:
 
-┌────────────────────┬────────────────────────────────────────┐
-│ Type               │ Package Name                           │
-├────────────────────┼────────────────────────────────────────┤
-│ Unused Dependency  │ lodash                                 │
-├────────────────────┼────────────────────────────────────────┤
-│ Unused Dependency  │ moment                                 │
-├────────────────────┼────────────────────────────────────────┤
-│ Unused DevDependency │ jest                                 │
-├────────────────────┼────────────────────────────────────────┤
-│ Large Package (>1MB) │ puppeteer                            │
-└────────────────────┴────────────────────────────────────────┘
+┌────────────────────┬───────────────────────────────┐
+│ Type               │ Package Name                  │
+├────────────────────┼───────────────────────────────┤
+│ Unused Dependency  │ lodash                        │
+│ Unused DevDependency │ jest                        │
+│ Large Package (>1MB) │ puppeteer                   │
+└────────────────────┴───────────────────────────────┘
 
-🧮 Total: 3 unused packages, 1 large packages
+🧮 Total: 2 unused packages, 1 large package
 
-? Do you want to remove all 3 unused packages? (y/N)
-\`\`\`
+? Do you want to remove all 2 unused packages? (y/N)
+```
+
+---
 
 ## ⚙️ How It Works
 
-ghost-amt uses several techniques to identify unused packages:
+1. **Static code analysis:** Scans your codebase to detect which dependencies are actually imported or required.
+2. **Package size detection:** Checks installed package sizes to identify potentially heavy dependencies.
+3. **Interactive removal:** Prompts you to safely uninstall unused packages with your confirmation.
 
-1. **Static Analysis**: Scans your project files to find which imports and requires are actually being used
-2. **Package Size Detection**: Identifies large packages that might be unnecessarily bloating your project
-3. **Interactive Removal**: Lets you choose whether to remove unused packages with a simple prompt
+---
 
-## 🚫 What It Doesn't Do
+## ❗ Limitations
 
-- **Doesn't modify your code**: Only removes packages from package.json and node_modules
-- **Doesn't touch dynamically loaded modules**: If you use \`require(variable)\`, it might report false positives
-- **Doesn't analyze build-time usage**: Tools used only in build scripts might be reported as unused
+* May **miss dynamic imports or requires** (e.g., `require(variable)`).
+* Does **not modify your source code**; only cleans `package.json` and `node_modules`.
+* Some build tools or scripts may cause false positives.
+
+---
 
 ## 📖 Advanced Usage
 
-### CI Mode
+### Run in CI mode (non-interactive)
 
-\`\`\`bash
-# Non-interactive mode for CI pipelines
+```bash
 ghost-amt --ci
-\`\`\`
+```
 
-### Generate Report Only
+### Generate report without uninstall prompt
 
-\`\`\`bash
+```bash
 ghost-amt --report-only
-\`\`\`
+```
 
-## 🛠️ Contributing
+---
 
-Contributions are welcome! Please feel free to submit a Pull Request.
+## 🤝 Contributing
 
-1. Fork the repository
-2. Create your feature branch (\`git checkout -b feature/amazing-feature\`)
-3. Commit your changes (\`git commit -m 'Add some amazing feature'\`)
-4. Push to the branch (\`git push origin feature/amazing-feature\`)
+Contributions are very welcome!
+
+1. Fork the repo
+2. Create a feature branch (`git checkout -b feature-name`)
+3. Commit your changes (`git commit -m "Add feature"`)
+4. Push to your branch (`git push origin feature-name`)
 5. Open a Pull Request
+
+---
 
 ## 📝 License
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+MIT © [Abdullah Al Mubin](https://github.com/AmtTawsik)
+
+---
 
 ## 👤 Author
 
 **Abdullah Al Mubin**
 
-* Twitter: [@abdullahmubin](https://twitter.com/abdullahmubin)
-* Github: [@abdullahmubin](https://github.com/abdullahmubin)
+* [Website](https://abdullahalmubin.blog)
+* [LinkedIn](https://www.linkedin.com/in/abdullah-al-mubin-tawsik)
