@@ -1,0 +1,32 @@
+{
+  "name": "ghost-amt",
+  "version": "1.0.0",
+  "description": "Find and clean up unused npm dependencies in your project",
+  "main": "src/index.js",
+  "bin": {
+    "ghost-amt": "./bin/ghost-amt.js"
+  },
+  "scripts": {
+    "start": "node bin/ghost-amt.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "npm",
+    "dependencies",
+    "cleanup",
+    "unused",
+    "packages",
+    "ghost",
+    "dependencies"
+  ],
+  "author": "Abdullah Al Mubin",
+  "license": "MIT",
+  "dependencies": {
+    "chalk": "^4.1.2",
+    "cli-table3": "^0.6.3",
+    "depcheck": "^1.4.3",
+    "inquirer": "^8.2.5",
+    "ora": "^5.4.1",
+    "package-json": "^7.0.0"
+  }
+}
